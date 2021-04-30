@@ -202,6 +202,7 @@ function mayorACien(array) {
     if(array[i] > 100) {
       nuevoArray.push(array[i]);
     }
+  }
   return nuevoArray;
 };
 
@@ -222,7 +223,7 @@ function breakStatement(numero) {
       array.push(suma);
     }
   }
-  if(i < 9) {
+  if(i < 10) {
     return 'Se interrumpió la ejecución';
   }
   else {
