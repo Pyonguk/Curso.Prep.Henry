@@ -26,6 +26,7 @@ function incrementarPorUno(array) {
   var nuevoArray = [];
   for (var i = 0; i < array.length; i++) {
     nuevoArray[i] = array[i] + 1;
+    // nuevoArray[i] ubica los nuevos datos
   }
   return nuevoArray;
 };
@@ -53,7 +54,16 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  return palabras.join(' ');
+  var idk = '';
+  for (var i = 0; i < palabras.length; i++) {
+    if (i < palabras.length - 1) {
+      idk += palabras[i] + ' ';
+    } else {
+      idk += palabras[i];
+    }
+  }
+  return idk;
+  // o return palabras.join(' ');
 };
 
 function arrayContiene(array, elemento) {
@@ -83,7 +93,11 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  return agregarNumeros(resultadosTest) / resultadosTest.length;
+  var promedio = 0;
+  for(var i = 0; i < resultadosTest.length; i++) {
+    promedio += resultadosTest[i];
+  }
+  return promedio / resultadosTest.length;
 };
 
 function numeroMasGrande(numeros) {
@@ -91,8 +105,8 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
   var maximo = numeros[0];
-  for(var i = 1; i < numeros.length; i++) {
-    if(numeros[i] > maximo) {
+  for (var i = 1; i < numeros.length; i++) {
+    if (numeros[i] > maximo) {
       maximo = numeros[i];
     }
   }
