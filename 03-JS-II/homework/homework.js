@@ -5,10 +5,12 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
-  if(x > y) {
-    return x;
-  } else {
+  if (x === y) {
+    return x || y;
+  } else if (x < y) {
     return y;
+  } else {
+    return x;
   }
 };
 
@@ -16,10 +18,9 @@ function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-  if(edad >= 18) {
+  if (edad >= 18) {
     return "Allowed";
-  }
-  else {
+  } else {
     return "Not allowed";
   }
 };
@@ -30,13 +31,11 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
-  if(status === 1) {
+  if (status === 1) {
     return "Online";
-  }
-  else if(status === 2) {
+  } else if (status === 2) {
     return "Away";
-  }
-  else {
+  } else {
     return "Offline";
   }
 };
@@ -48,7 +47,7 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
-  if(idioma === 'aleman') {
+  if (idioma === 'aleman') {
     return 'Guten Tag!';
   } else if (idioma === 'mandarin') {
     return 'Ni Hao!';
@@ -123,7 +122,7 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero % 15 === 0) {
+  if (numero % 5 === 0 && numero % 3 === 0) {
     return 'fizzbuzz';
   } else if (numero % 3 === 0) {
     return 'fizz';
@@ -145,7 +144,7 @@ function operadoresLogicos(num1, num2, num3) {
     return "Hay negativos";
   } else if (num1 === 0 || num2 === 0 || num3 === 0) {
     return "Error";
-  } else if (num1 > 0 && num1 > num2 && num1 > num3) {
+  } else if (num1 > num2 && num1 > num3 && num1 > 0) {
     return "Número 1 es mayor y positivo";
   } else if (num3 > num1 && num3 > num2) {
     return num3 + 1;
@@ -166,7 +165,8 @@ function esPrimo(numero) {
   } else if (numero === 2) {
     return true;
   } for (var i = 2; i < numero; i++) {
-    if (numero % i === 0) {
+    if (numero / i === Math.round(numero / i)) {
+    // or if (numero % i === 0)
       return false;
     }
   }
@@ -188,7 +188,7 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-  let arrayTablaDel6 = []
+  var arrayTablaDel6 = []
   for (let i = 0; i < 11; i++) {
     arrayTablaDel6.push(6 * i)
   }
@@ -212,8 +212,8 @@ function doWhile(numero) {
   var a = numero;
   var i = 0;
   do {
-    i = i + 1;
     a = a + 5;
+    i = i + 1;
   }
   while(i < 8);
   return a;
