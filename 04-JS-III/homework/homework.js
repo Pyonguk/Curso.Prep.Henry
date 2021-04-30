@@ -120,7 +120,7 @@ function multiplicarArgumentos() {
   // Tu código:
   if (arguments.length < 1) return 0;
   var total = 1;
-  for(var i = 0; i < arguments.length; i++) {
+  for (var i = 0; i < arguments.length; i++) {
     total = total * arguments[i];
   }
   return total;
@@ -143,10 +143,11 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario.
   //Escribe tu código aquí
-  if(numeroDeDia === 1 || numeroDeDia === 7 ) {
+  if (numeroDeDia === 1 || numeroDeDia === 7 ) {
     return "Es fin de semana";
+  } else {
+    return "Es dia Laboral";
   }
-  return "Es dia Laboral";
 };
 
 function empiezaConNueve(n) {
@@ -154,23 +155,25 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   let num = n.toString()
-  if(num.charAt(0) === "9"){
-    return true
+  if (num.charAt(0) === "9"){
+    return true;
+  } else {
+    return false;
   }
-  return false
-}
+};
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí
   for (var i =0 ; i < arreglo.length - 1; i++) {
-    if(arreglo[i] !== arreglo[i+1]){
-      return false
+    if (arreglo[i] !== arreglo[i + 1]) {
+      return false;
+    } else {
+      return true;
     }
   }
-  return true
-}
+};
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de
@@ -183,10 +186,9 @@ function mesesDelAño(array) {
       nuevoArray.push(array[i]);
     }
   }
-  if(nuevoArray.length < 3) {
+  if (nuevoArray.length < 3) {
     return "No se encontraron los meses pedidos";
-  }
-  else {
+  } else {
       return nuevoArray;
   }
 };
@@ -200,9 +202,8 @@ function mayorACien(array) {
     if(array[i] > 100) {
       nuevoArray.push(array[i]);
     }
-  }
   return nuevoArray;
-}
+};
 
 function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -221,7 +222,7 @@ function breakStatement(numero) {
       array.push(suma);
     }
   }
-  if(i < 10) {
+  if(i < 9) {
     return 'Se interrumpió la ejecución';
   }
   else {
