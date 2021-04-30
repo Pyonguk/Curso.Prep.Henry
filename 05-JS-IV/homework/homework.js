@@ -51,7 +51,6 @@ function eliminarPropiedad(objeto, propiedad) {
   // Devuelve el objeto
   // Tu código:
   delete objeto[propiedad];
-
   return objeto;
 }
 
@@ -64,7 +63,6 @@ function nuevoUsuario(nombre, email, password) {
     email: email,
     password: password
   };
-
   return obj;
 }
 
