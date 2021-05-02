@@ -4,19 +4,19 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   return nombre[0].toUpperCase() + nombre.slice(1);
-}
+};
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   cb();
-}
+};
 
 function operacionMatematica(n1, n2, cb) {
   //Vamos a recibir una función que realiza una operación matemática como callback junto con dos números.
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
   return cb(n1, n2);
-}
+};
 
 function sumarArray(numeros, cb) {
   // Suma todos los números enteros (int/integers) de un array ("numeros")
@@ -29,13 +29,12 @@ function sumarArray(numeros, cb) {
   //   suma = suma + numeros[i];
   // }
   // cb(suma);
-
   // Segunda opcion
   var sumaTotal = numeros.reduce(function(acc, curr) {
     return acc + curr;
   },0);
   cb(sumaTotal);
-}
+};
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
@@ -46,7 +45,7 @@ function forEach(array, cb) {
   for(var i = 0; i < array.length; i++) {
     cb(array[i]);
   }
-}
+};
 
 function map(array, cb) {
   // Crea un nuevo array
@@ -64,19 +63,19 @@ function map(array, cb) {
     return cb(el);
   });
   return nuevoArray;
-}
+};
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   var nuevoArray = [];
-  for(let i = 0; i<array.length; i++) {
-    if(array[i][0] === "a") {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][0] === "a") {
       nuevoArray.push(array[i])
     }
   }
   return nuevoArray;
-}
+};
 
 // No modificar nada debajo de esta línea
 // --------------------------------
