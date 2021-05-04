@@ -6,14 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var obj = {
-    nombre: nombre,
-    edad: edad,
-    meow: function() {
+  const gato = {
+    nombre,
+    edad,
+    meow() {
       return 'Meow!';
     }
   };
-  return obj;
+  return gato;
 };
 
 
@@ -41,8 +41,7 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // var ojbMisterioso = {
   //   numeroMisterioso: 4;
   // }
-  var result = objetoMisterioso.numeroMisterioso * 5;
-  return result;
+  return objetoMisterioso.numeroMisterioso * 5;
 };
 
 function eliminarPropiedad(objeto, propiedad) {
@@ -58,9 +57,9 @@ function nuevoUsuario(nombre, email, password) {
   // Devuelve el objeto
   // Tu código:
   var obj = {
-    nombre: nombre,
-    email: email,
-    password: password
+    nombre,
+    email,
+    password
   };
   return obj;
 };
@@ -69,11 +68,12 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if (usuario['email']) {
-    return true;
-  } else {
-    return false;
-  }
+  //  if (usuario.email) {
+  //  return true;
+  //  } else {
+  //  return false;
+  //  }
+  return usuario.email ? true : false;
 };
 
 
@@ -95,7 +95,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  return usuario['password'] === password;
+  return usuario.password === password;
 };
 
 function actualizarPassword(usuario, nuevaPassword) {
@@ -133,7 +133,7 @@ function pasarUsuarioAPremium(usuarios) {
 
 function sumarLikesDeUsuario(usuario) {
   // "usuario" tiene una propiedad llamada "posts" que es un array
-  // "posts" es un array de objetos "post"
+  // "posts" es un array de objetos "post"x`
   // Cada objeto "post" tiene una propiedad llamada "likes" que es un entero (int/integer)
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
@@ -143,11 +143,11 @@ function sumarLikesDeUsuario(usuario) {
   //     likes: 4
   //   }]
   // };
-  var suma = 0;
+  let likesTotales = 0;
   for(var i = 0; i < usuario.posts.length; i++) {
-    suma = suma + usuario.posts[i].likes;
+    likesTotales = likesTotales + usuario.posts[i].likes;
   }
-  return suma;
+  return likesTotales;
 };
 
 function agregarMetodoCalculoDescuento(producto) {
@@ -165,8 +165,9 @@ function agregarMetodoCalculoDescuento(producto) {
   //   porcentajeDeDescuento: 5,
   //   calcularPrecioDescuento:
   // };
+  // producto.precio = this.precio
   producto.calcularPrecioDescuento = function() {
-    return this.precio - ( this.precio * this.porcentajeDeDescuento );
+    return producto.precio - ( producto.precio * producto.porcentajeDeDescuento );
   };
   return producto;
 };

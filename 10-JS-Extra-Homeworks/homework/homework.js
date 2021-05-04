@@ -81,13 +81,20 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var idk = '';
+  for (i = 0; i < cadena.length; i++) {
+    if (!(cadena[i] === 'a' || cadena[i] === 'b' || cadena[i] === 'c')) {
+      idk = idk + cadena[i];
+    }
+  }
+  return idk;
 };
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
-}
+};
 
 
 function buscoInterseccion(arreglo1, arreglo2) {
