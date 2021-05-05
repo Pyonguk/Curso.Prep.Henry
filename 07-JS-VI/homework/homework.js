@@ -42,9 +42,13 @@ function forEach(array, cb) {
   // array.forEach(function(el, index) {
   //   cb(el);
   // });
-  for(var i = 0; i < array.length; i++) {
+  /* for(var i = 0; i < array.length; i++) {
     cb(array[i]);
-  }
+  } */
+  var iteracion = array.forEach(function(elemento) {
+    return cb(elemento);
+  })
+  return iteracion;
 };
 
 function map(array, cb) {
@@ -68,13 +72,15 @@ function map(array, cb) {
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
-  var nuevoArray = [];
+  /* let nuevoArray = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i][0] === "a") {
       nuevoArray.push(array[i])
     }
   }
-  return nuevoArray;
+  return nuevoArray; */
+  let filtro = array.filter(aFirst => aFirst[0] === 'a');
+  return filtro;
 };
 
 // No modificar nada debajo de esta línea
