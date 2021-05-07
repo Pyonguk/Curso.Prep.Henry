@@ -10,7 +10,12 @@ function deObjetoAmatriz(objeto) {
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-  return Object.entries(objeto);
+  // return Object.entries(objeto);
+  var pares = [];
+  for (var i in objeto) {
+    pares.push([i, objeto[i]]);
+  }
+  return pares;
 };
 
 
@@ -21,10 +26,11 @@ function numberOfCharacters(string) {
   //Escribe tu código aquí abajo
   let resultado = {};
   for (let i = 0; i < string.length; i++) {
-    if (!resultado[string[i]]) {
-      resultado[string[i]] = 0;
+    if (resultado[string[i]]) {
+      resultado[string[i]] += 1;
+    } else {
+      resultado[string[i]] = 1;
     }
-    resultado[string[i]] += 1;
   }
   return resultado;
 };
@@ -39,9 +45,9 @@ function capToFront(s) {
   var min = '';
   for (let i = 0; i < s.length; i++) {
     if (s[i] === s[i].toUpperCase()) {
-       may = may + s[i];
+       may += s[i];
     } else {
-       min = min + s[i];
+       min += s[i];
     }
   }
    return may + min;
@@ -54,14 +60,18 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  const reverse = function(str) {
+  /*const reverse = function(str) {
     return str.split(' ').map(function (item) {
       return item.split('').reverse().join('');
       }).join(' ');
   }
-  return reverse(str);
-};
-
+  return reverse(str);*/
+  let reverse = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reverse += str[i]
+  }
+  return reverse.split(' ').reverse().join(' ');
+}
 
 
 function capicua(numero){
@@ -84,7 +94,7 @@ function deleteAbc(cadena){
   var idk = '';
   for (i = 0; i < cadena.length; i++) {
     if (!(cadena[i] === 'a' || cadena[i] === 'b' || cadena[i] === 'c')) {
-      idk = idk + cadena[i];
+      idk += cadena[i];
     }
   }
   return idk;
@@ -94,6 +104,34 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  var flecha, nuevoArray = arr.slice(), acumulator = [];
+  for (let i = 0; i < arr.length; i++) {
+
+    let palabra = nuevoArray[0].length;
+    flecha = nuevoArray[0];
+    for (var j = 0; j < nuevoArray.length; j++) {
+
+      let palabra2 = nuevoArray[j].length;
+      if (palabra2 < palabra) {
+        flecha = nuevoArray[j];
+      }
+
+    }
+    if (nuevoArray.length >= 1) {
+
+      acumulator.push(flecha);
+
+    } else {
+
+      acumulator.push(nuevoArray[0]);
+
+    }
+    nuevoArray.splice(nuevoArray.indexOf(flecha), 1);
+
+  }
+
+  return acumulator;
+  
 };
 
 
@@ -103,7 +141,7 @@ function buscoInterseccion(arreglo1, arreglo2) {
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí
-  unión = []
+  let unión = []
   for (var i = 0; i < arreglo1.length; i++) {
     for (var j = 0; j < arreglo2.length; j++) {
       if (arreglo1[i] === arreglo2[j]) {
