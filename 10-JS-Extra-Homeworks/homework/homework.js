@@ -11,11 +11,12 @@ function deObjetoAmatriz(objeto) {
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
   // return Object.entries(objeto);
-  var pares = [];
+  /* var pares = [];
   for (var i in objeto) {
     pares.push([i, objeto[i]]);
   }
-  return pares;
+  return pares; */
+  return Object.entries(objeto);
 };
 
 
@@ -131,7 +132,7 @@ function sortArray(arr) {
   }
 
   return acumulator;
-  
+
 };
 
 
